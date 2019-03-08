@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        passwordField.isSecureTextEntry = true
         
     } // end viewDidLoad function
     
@@ -52,7 +53,7 @@ class LoginViewController: UIViewController {
             }
         }
         
-    } // end onSignUp
+    } // end onSignUp function
     
     /*
     // MARK: - Navigation
