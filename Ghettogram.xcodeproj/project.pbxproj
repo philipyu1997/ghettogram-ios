@@ -11,6 +11,8 @@
 		6E0CD7E03B9B8E81464121F5 /* Pods_GhettogramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5273F109C66FE1D045C713D /* Pods_GhettogramUITests.framework */; };
 		7217F2EB223214F00092D501 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F2EA223214F00092D501 /* LoginViewController.swift */; };
 		7217F2ED223214FB0092D501 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F2EC223214FB0092D501 /* FeedViewController.swift */; };
+		7217F2EF223225F60092D501 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F2EE223225F60092D501 /* CameraViewController.swift */; };
+		7217F2F222322F420092D501 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F2F122322F420092D501 /* PostCell.swift */; };
 		72DECFFA2232099700AEE438 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DECFF92232099700AEE438 /* AppDelegate.swift */; };
 		72DECFFF2232099700AEE438 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72DECFFD2232099700AEE438 /* Main.storyboard */; };
 		72DED0012232099A00AEE438 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72DED0002232099A00AEE438 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		4A83B39E8CA552CDB1AB7A46 /* Pods-GhettogramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhettogramUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GhettogramUITests/Pods-GhettogramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7217F2EA223214F00092D501 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7217F2EC223214FB0092D501 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		7217F2EE223225F60092D501 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		7217F2F122322F420092D501 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		72DECFF62232099700AEE438 /* Ghettogram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ghettogram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72DECFF92232099700AEE438 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72DECFFE2232099700AEE438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,6 +108,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7217F2F022322F2C0092D501 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7217F2F122322F420092D501 /* PostCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		72DECFED2232099700AEE438 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +141,7 @@
 		72DECFF82232099700AEE438 /* Ghettogram */ = {
 			isa = PBXGroup;
 			children = (
+				7217F2F022322F2C0092D501 /* Cells */,
 				72F10E0E22320BB40023A176 /* Storyboards */,
 				72F10E0D22320BA50023A176 /* View Controllers */,
 				72DECFF92232099700AEE438 /* AppDelegate.swift */,
@@ -161,6 +174,7 @@
 			children = (
 				7217F2EA223214F00092D501 /* LoginViewController.swift */,
 				7217F2EC223214FB0092D501 /* FeedViewController.swift */,
+				7217F2EE223225F60092D501 /* CameraViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -417,8 +431,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7217F2EB223214F00092D501 /* LoginViewController.swift in Sources */,
+				7217F2EF223225F60092D501 /* CameraViewController.swift in Sources */,
 				7217F2ED223214FB0092D501 /* FeedViewController.swift in Sources */,
 				72DECFFA2232099700AEE438 /* AppDelegate.swift in Sources */,
+				7217F2F222322F420092D501 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
