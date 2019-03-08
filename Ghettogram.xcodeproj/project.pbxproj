@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		6D5DC265AFB82428F54B88F6 /* Pods_GhettogramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95D2FF4DBBD1F11084023CC /* Pods_GhettogramTests.framework */; };
 		6E0CD7E03B9B8E81464121F5 /* Pods_GhettogramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5273F109C66FE1D045C713D /* Pods_GhettogramUITests.framework */; };
+		7217F2EB223214F00092D501 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F2EA223214F00092D501 /* LoginViewController.swift */; };
+		7217F2ED223214FB0092D501 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F2EC223214FB0092D501 /* FeedViewController.swift */; };
 		72DECFFA2232099700AEE438 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DECFF92232099700AEE438 /* AppDelegate.swift */; };
-		72DECFFC2232099700AEE438 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DECFFB2232099700AEE438 /* ViewController.swift */; };
 		72DECFFF2232099700AEE438 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72DECFFD2232099700AEE438 /* Main.storyboard */; };
 		72DED0012232099A00AEE438 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72DED0002232099A00AEE438 /* Assets.xcassets */; };
 		72DED0042232099A00AEE438 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72DED0022232099A00AEE438 /* LaunchScreen.storyboard */; };
@@ -41,9 +42,10 @@
 		2FA700BD29E45D5E19622467 /* Pods-Ghettogram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ghettogram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ghettogram/Pods-Ghettogram.debug.xcconfig"; sourceTree = "<group>"; };
 		35239D1A066AB87ED790D11F /* Pods-GhettogramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhettogramTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GhettogramTests/Pods-GhettogramTests.release.xcconfig"; sourceTree = "<group>"; };
 		4A83B39E8CA552CDB1AB7A46 /* Pods-GhettogramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhettogramUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GhettogramUITests/Pods-GhettogramUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7217F2EA223214F00092D501 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7217F2EC223214FB0092D501 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		72DECFF62232099700AEE438 /* Ghettogram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ghettogram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72DECFF92232099700AEE438 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		72DECFFB2232099700AEE438 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		72DECFFE2232099700AEE438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		72DED0002232099A00AEE438 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72DED0032232099A00AEE438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -157,7 +159,8 @@
 		72F10E0D22320BA50023A176 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				72DECFFB2232099700AEE438 /* ViewController.swift */,
+				7217F2EA223214F00092D501 /* LoginViewController.swift */,
+				7217F2EC223214FB0092D501 /* FeedViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -413,7 +416,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72DECFFC2232099700AEE438 /* ViewController.swift in Sources */,
+				7217F2EB223214F00092D501 /* LoginViewController.swift in Sources */,
+				7217F2ED223214FB0092D501 /* FeedViewController.swift in Sources */,
 				72DECFFA2232099700AEE438 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
