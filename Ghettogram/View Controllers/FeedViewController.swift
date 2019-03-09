@@ -14,6 +14,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // Properties
     var posts = [PFObject]()
+    var numberOfPost: Int!
     var refreshControl: UIRefreshControl!
     
     // Outlets
@@ -24,6 +25,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        numberOfPost = 5
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -37,10 +40,15 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidAppear(_ animated: Bool) {
         
         super.viewDidAppear(animated)
+        loadPost()
+        
+    } // end viewDidAppear function
+    
+    @objc func loadPost() {
         
         let query = PFQuery(className: "Posts")
         query.includeKey("author")
-        query.limit = 5
+        query.limit = numberOfPost
         
         query.findObjectsInBackground { (posts, error) in
             if posts != nil {
@@ -49,7 +57,22 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
         
-    } // end viewDidAppear function
+    } // end loadPost function
+    
+    func loadMorePost() {
+        
+        numberOfPost += 5
+        loadPost()
+        
+    } // end loadMorePost function
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if indexPath.row + 1 == posts.count {
+            loadMorePost()
+        }
+        
+    } // end tableView(willDisplay) function
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -78,9 +101,11 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // Call the delay method in your onRefresh() method
     @objc func onRefresh() {
+        
         run(after: 2) {
             self.refreshControl.endRefreshing()
         }
+        
     } // end onRefresh function
     
     // Implement the delay method
