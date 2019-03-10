@@ -16,6 +16,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var posts = [PFObject]()
     var numberOfPost: Int!
     var refreshControl: UIRefreshControl!
+    let feedLimit = 20
     
     // Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -26,13 +27,11 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // Do any additional setup after loading the view.
         
-        numberOfPost = 5
-        
         tableView.dataSource = self
         tableView.delegate = self
         
         refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(loadPost), for: .valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
         
     } // end viewDidLoad function
@@ -40,6 +39,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidAppear(_ animated: Bool) {
         
         super.viewDidAppear(animated)
+        numberOfPost = 5
         loadPost()
         
     } // end viewDidAppear function
@@ -49,11 +49,15 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let query = PFQuery(className: "Posts")
         query.includeKey("author")
         query.limit = numberOfPost
+        query.order(byDescending: "createdAt")
         
         query.findObjectsInBackground { (posts, error) in
             if posts != nil {
                 self.posts = posts!
                 self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
+            } else {
+                print("Oh No! We can't fetch any photos!: \(error)")
             }
         }
         
@@ -62,14 +66,31 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func loadMorePost() {
         
         numberOfPost += 5
-        loadPost()
+
+        let query = PFQuery(className: "Posts")
+        query.includeKey("author")
+        query.limit = numberOfPost
+        query.order(byDescending: "createdAt")
+        
+        query.findObjectsInBackground { (posts, error) in
+            if posts != nil {
+                self.posts = posts!
+                self.tableView.reloadData()
+            } else {
+                print("Oh No! We can't fetch any photos!: \(error)")
+            }
+        }
         
     } // end loadMorePost function
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        if indexPath.row + 1 == posts.count {
-            loadMorePost()
+        if posts.count < feedLimit {
+            if indexPath.row + 1 == posts.count {
+                loadMorePost()
+            }
+//        } else {
+//            print("Feed limit reached")
         }
         
     } // end tableView(willDisplay) function
