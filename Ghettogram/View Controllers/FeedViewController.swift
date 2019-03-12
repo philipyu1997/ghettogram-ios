@@ -15,6 +15,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // Properties
     var posts = [PFObject]()
+    var selectedPost: PFObject!
     var numberOfPost: Int!
     var refreshControl: UIRefreshControl!
     var showsCommentBar = false
@@ -85,6 +86,23 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         
         // Create the comment
+        let comment = PFObject(className: "Comments")
+        
+        comment["text"] = text
+        comment["post"] = selectedPost
+        comment["author"] = PFUser.current()
+        
+        selectedPost.add(comment, forKey: "comments")
+        
+        selectedPost.saveInBackground { (success, error) in
+            if success {
+                print("Comment saved")
+            } else {
+                print("Error saving comment")
+            }
+        }
+        
+        tableView.reloadData()
         
         // Clear and dismiss the input bar
         commentBar.inputTextView.text = nil
@@ -178,13 +196,15 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let post = posts[indexPath.row]
+        let post = posts[indexPath.section]
         let comments = (post["comments"] as? [PFObject]) ?? []
         
         if indexPath.row == comments.count + 1 {
             showsCommentBar = true
             becomeFirstResponder()
             commentBar.inputTextView.becomeFirstResponder()
+            
+            selectedPost = post
         }
         
     } // end tableView(didSelectRowAt) function

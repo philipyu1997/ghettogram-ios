@@ -54,7 +54,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         picker.allowsEditing = true
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-//            picker.sourceType = .camera
+            //            picker.sourceType = .camera
             picker.sourceType = .photoLibrary
         } else {
             picker.sourceType = .photoLibrary
@@ -68,7 +68,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         let image = info[.editedImage] as! UIImage
         let size = CGSize(width: 300, height: 300)
-        let scaledImage = image.af_imageScaled(to: size)
+        let scaledImage = image.af_imageAspectScaled(toFill: size)
         
         photoImageView.image = scaledImage
         
