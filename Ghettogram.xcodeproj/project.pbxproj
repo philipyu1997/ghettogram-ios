@@ -19,6 +19,7 @@
 		72DED0042232099A00AEE438 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72DED0022232099A00AEE438 /* LaunchScreen.storyboard */; };
 		72DED00F2232099B00AEE438 /* GhettogramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DED00E2232099B00AEE438 /* GhettogramTests.swift */; };
 		72DED01A2232099B00AEE438 /* GhettogramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DED0192232099B00AEE438 /* GhettogramUITests.swift */; };
+		72FE27A322377C35007B903C /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FE27A222377C35007B903C /* CommentCell.swift */; };
 		D268A9A87598D0F6678B34D6 /* Pods_Ghettogram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EE5B948F195AD595E0367A /* Pods_Ghettogram.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		72DED0152232099B00AEE438 /* GhettogramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GhettogramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72DED0192232099B00AEE438 /* GhettogramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhettogramUITests.swift; sourceTree = "<group>"; };
 		72DED01B2232099B00AEE438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72FE27A222377C35007B903C /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		A5273F109C66FE1D045C713D /* Pods_GhettogramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GhettogramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B175FF74D871960E10A88BAA /* Pods-GhettogramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhettogramUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GhettogramUITests/Pods-GhettogramUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C95D2FF4DBBD1F11084023CC /* Pods_GhettogramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GhettogramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				7217F2F122322F420092D501 /* PostCell.swift */,
+				72FE27A222377C35007B903C /* CommentCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				7217F2ED223214FB0092D501 /* FeedViewController.swift in Sources */,
 				72DECFFA2232099700AEE438 /* AppDelegate.swift in Sources */,
 				7217F2F222322F420092D501 /* PostCell.swift in Sources */,
+				72FE27A322377C35007B903C /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

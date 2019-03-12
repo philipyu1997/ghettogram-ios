@@ -47,7 +47,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @objc func loadPost() {
         
         let query = PFQuery(className: "Posts")
-        query.includeKey("author")
+        query.includeKeys(["author", "comments", "comments.author"])
         query.limit = numberOfPost
         query.order(byDescending: "createdAt")
         
@@ -66,57 +66,65 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func loadMorePost() {
         
         numberOfPost += 5
-
-        let query = PFQuery(className: "Posts")
-        query.includeKey("author")
-        query.limit = numberOfPost
-        query.order(byDescending: "createdAt")
-        
-        query.findObjectsInBackground { (posts, error) in
-            if posts != nil {
-                self.posts = posts!
-                self.tableView.reloadData()
-            } else {
-                print("Oh No! We can't fetch any photos!: \(error)")
-            }
-        }
+        loadPost()
         
     } // end loadMorePost function
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        if posts.count < feedLimit {
+        if posts.count < numberOfPost {
             if indexPath.row + 1 == posts.count {
                 loadMorePost()
             }
-//        } else {
-//            print("Feed limit reached")
         }
         
     } // end tableView(willDisplay) function
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         
         return posts.count
+        
+    } // end numberOfSections function
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        let post = posts[section]
+        let comments = (post["comments"] as? [PFObject]) ?? []
+        
+        return comments.count + 1
         
     } // end tableView(numberOfRowsInSection) function
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
-        let post = posts[indexPath.row]
-        let user = post["author"] as! PFUser
+        let post = posts[indexPath.section]
+        let comments = (post["comments"] as? [PFObject]) ?? []
         
-        cell.usernameLabel.text = user.username
-        cell.captionLabel.text = post["caption"] as? String
-        
-        let imageFile = post["image"] as! PFFileObject
-        let urlString = imageFile.url!
-        let url = URL(string: urlString)!
-        
-        cell.photoView.af_setImage(withURL: url)
-        
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
+            let user = post["author"] as! PFUser
+            
+            cell.usernameLabel.text = user.username
+            cell.captionLabel.text = post["caption"] as? String
+            
+            let imageFile = post["image"] as! PFFileObject
+            let urlString = imageFile.url!
+            let url = URL(string: urlString)!
+            
+            cell.photoView.af_setImage(withURL: url)
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
+            
+            let comment = comments[indexPath.row - 1]
+            cell.commentLabel.text = comment["text"] as? String
+            
+            let user = comment["author"] as! PFUser
+            cell.userLabel.text = user.username
+            
+            return cell
+        }
         
     } // end tableView(cellForRowAt) function
     

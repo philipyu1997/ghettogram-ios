@@ -155,6 +155,41 @@
                                             <outlet property="usernameLabel" destination="5c1-fF-oDL" id="LJz-RI-rg2"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" id="k8l-u1-ApC" customClass="CommentCell" customModule="Ghettogram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="368" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k8l-u1-ApC" id="Xc3-Kw-hjE">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVR-AS-CQk">
+                                                    <rect key="frame" x="16" y="7.9999999999999982" width="39" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81f-SC-hbo">
+                                                    <rect key="frame" x="63" y="7.9999999999999982" width="75" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="81f-SC-hbo" firstAttribute="top" secondItem="Xc3-Kw-hjE" secondAttribute="top" constant="8" id="8hG-0U-w1o"/>
+                                                <constraint firstItem="LVR-AS-CQk" firstAttribute="top" secondItem="Xc3-Kw-hjE" secondAttribute="top" constant="8" id="9wj-8s-wPa"/>
+                                                <constraint firstItem="81f-SC-hbo" firstAttribute="leading" secondItem="LVR-AS-CQk" secondAttribute="trailing" constant="8" id="KaE-Oe-lha"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="81f-SC-hbo" secondAttribute="trailing" constant="8" id="M3v-Q6-zBd"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LVR-AS-CQk" secondAttribute="bottom" constant="8" id="dgQ-77-ktN"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="81f-SC-hbo" secondAttribute="bottom" constant="8" id="rfz-3o-XvK"/>
+                                                <constraint firstItem="LVR-AS-CQk" firstAttribute="leading" secondItem="Xc3-Kw-hjE" secondAttribute="leading" constant="16" id="ySr-lw-uvG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentLabel" destination="81f-SC-hbo" id="lcE-Je-j45"/>
+                                            <outlet property="userLabel" destination="LVR-AS-CQk" id="rSD-AZ-6Vc"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
