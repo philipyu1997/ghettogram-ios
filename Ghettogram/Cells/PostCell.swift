@@ -11,7 +11,8 @@ import UIKit
 class PostCell: UITableViewCell {
 
     // Outlets
-    @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
     

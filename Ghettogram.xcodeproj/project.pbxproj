@@ -13,6 +13,8 @@
 		7217F2ED223214FB0092D501 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F2EC223214FB0092D501 /* FeedViewController.swift */; };
 		7217F2EF223225F60092D501 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F2EE223225F60092D501 /* CameraViewController.swift */; };
 		7217F2F222322F420092D501 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F2F122322F420092D501 /* PostCell.swift */; };
+		7296D31A22379D5100440ED9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7296D31922379D5100440ED9 /* ProfileViewController.swift */; };
+		7296D31C22379DB100440ED9 /* ProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7296D31B22379DB100440ED9 /* ProfileDetailsViewController.swift */; };
 		72DECFFA2232099700AEE438 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DECFF92232099700AEE438 /* AppDelegate.swift */; };
 		72DECFFF2232099700AEE438 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72DECFFD2232099700AEE438 /* Main.storyboard */; };
 		72DED0012232099A00AEE438 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72DED0002232099A00AEE438 /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 		7217F2EC223214FB0092D501 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		7217F2EE223225F60092D501 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		7217F2F122322F420092D501 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		7296D31922379D5100440ED9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7296D31B22379DB100440ED9 /* ProfileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsViewController.swift; sourceTree = "<group>"; };
 		72DECFF62232099700AEE438 /* Ghettogram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ghettogram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72DECFF92232099700AEE438 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72DECFFE2232099700AEE438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -178,6 +182,8 @@
 				7217F2EA223214F00092D501 /* LoginViewController.swift */,
 				7217F2EC223214FB0092D501 /* FeedViewController.swift */,
 				7217F2EE223225F60092D501 /* CameraViewController.swift */,
+				7296D31922379D5100440ED9 /* ProfileViewController.swift */,
+				7296D31B22379DB100440ED9 /* ProfileDetailsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -439,8 +445,10 @@
 				7217F2EF223225F60092D501 /* CameraViewController.swift in Sources */,
 				7217F2ED223214FB0092D501 /* FeedViewController.swift in Sources */,
 				72DECFFA2232099700AEE438 /* AppDelegate.swift in Sources */,
+				7296D31A22379D5100440ED9 /* ProfileViewController.swift in Sources */,
 				7217F2F222322F420092D501 /* PostCell.swift in Sources */,
 				72FE27A322377C35007B903C /* CommentCell.swift in Sources */,
+				7296D31C22379DB100440ED9 /* ProfileDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

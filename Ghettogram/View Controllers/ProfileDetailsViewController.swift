@@ -1,20 +1,18 @@
 //
-//  CameraViewController.swift
+//  ProfileDetailsViewController.swift
 //  Ghettogram
 //
-//  Created by Philip Yu on 3/7/19.
+//  Created by Philip Yu on 3/12/19.
 //  Copyright © 2019 Philip Yu. All rights reserved.
 //
 
 import UIKit
-import AlamofireImage
 import Parse
 
-class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfileDetailsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // Outlets
-    @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var commentField: UITextField!
+    @IBOutlet weak var profileViewImage: UIImageView!
     
     override func viewDidLoad() {
         
@@ -24,24 +22,27 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
     } // end viewDidLoad function
     
+    @IBAction func dismissButton(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+        
+    } // end dismissButton function
+    
     @IBAction func onSubmitButton(_ sender: Any) {
         
-        let post = PFObject(className: "Posts")
+        let user = PFUser.current()
         
-        post["caption"] = commentField.text!
-        post["author"] = PFUser.current()!
-        
-        let imageData = photoImageView.image!.pngData()
+        let imageData = profileViewImage.image!.pngData()
         let file = PFFileObject(data: imageData!)
         
-        post["image"] = file
+        user?["image"] = file
         
-        post.saveInBackground { (success, error) in
+        user?.saveInBackground { (success, error) in
             if success {
-                print("SUCCESS: Photo has been uploaded to your feed!")
+                print("SUCCESS: Successfully updated your profile image!")
                 self.dismiss(animated: true, completion: nil)
             } else {
-                print("ERROR: Failed to upload photo to your feed!")
+                print("ERROR: Failed to update profile image!")
             }
         }
         
@@ -54,7 +55,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         picker.allowsEditing = true
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            picker.sourceType = .camera
+            picker.sourceType = .photoLibrary
         } else {
             picker.sourceType = .photoLibrary
         }
@@ -69,7 +70,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         let size = CGSize(width: 300, height: 300)
         let scaledImage = image.af_imageAspectScaled(toFill: size)
         
-        photoImageView.image = scaledImage
+        profileViewImage.image = scaledImage
         
         dismiss(animated: true, completion: nil)
         
@@ -85,4 +86,4 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
      }
      */
     
-} // end CameraViewController class
+} // end ProfileDetailsViewController class

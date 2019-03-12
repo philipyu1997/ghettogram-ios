@@ -15,6 +15,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // Properties
     var posts = [PFObject]()
+    var profile = [PFObject]()
     var selectedPost: PFObject!
     var numberOfPost: Int!
     var refreshControl: UIRefreshControl!
@@ -62,7 +63,16 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let query = PFQuery(className: "Posts")
         query.includeKeys(["author", "comments", "comments.author"])
         query.limit = numberOfPost
-        //        query.order(byDescending: "createdAt")
+        query.order(byDescending: "createdAt")
+        
+        let profileQuery = PFQuery(className: "User")
+        profileQuery.includeKey("image")
+        
+        profileQuery.findObjectsInBackground { (profile, error) in
+            if profile != nil {
+                self.profile = profile!
+            }
+        }
         
         query.findObjectsInBackground { (posts, error) in
             if posts != nil {
@@ -70,7 +80,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
             } else {
-                print("Oh No! We can't fetch any photos!: \(error)")
+                print("Error: \(error)")
             }
         }
         
@@ -78,8 +88,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func loadMorePost() {
         
-        numberOfPost += 5
-        loadPost()
+        self.numberOfPost += 5
+        self.loadPost()
         
     } // end loadMorePost function
     
@@ -96,9 +106,9 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         selectedPost.saveInBackground { (success, error) in
             if success {
-                print("Comment saved")
+                print("SUCCESS: Successfully commented on a photo!")
             } else {
-                print("Error saving comment")
+                print("ERROR: Failed to comment on a photo!")
             }
         }
         
@@ -161,7 +171,12 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let post = posts[indexPath.section]
         let comments = (post["comments"] as? [PFObject]) ?? []
+        let profiles = profile[0]
         
+        let profileImageFile = profiles["image"] as! PFFileObject
+        let profileUrlString = profileImageFile.url!
+        let profileUrl = URL(string: profileUrlString)!
+
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
             let user = post["author"] as! PFUser
@@ -173,7 +188,13 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let urlString = imageFile.url!
             let url = URL(string: urlString)!
             
-            cell.photoView.af_setImage(withURL: url)
+            cell.postImageView.af_setImage(withURL: url)
+            
+            if profiles["image"] != nil {
+                cell.userImageView.af_setImage(withURL: profileUrl)
+            } else {
+                print("ERROR: Failed to fetch user profile image. Display stock image.")
+            }
             
             return cell
         } else if indexPath.row <= comments.count {
@@ -184,12 +205,13 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             let user = comment["author"] as! PFUser
             cell.userLabel.text = user.username
+            cell.profileImageView.af_setImage(withURL: profileUrl)
             
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentCell")!
             
-            return cell            
+            return cell
         }
         
     } // end tableView(cellForRowAt) function

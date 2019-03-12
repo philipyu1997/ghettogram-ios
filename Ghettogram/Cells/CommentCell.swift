@@ -10,6 +10,8 @@ import UIKit
 
 class CommentCell: UITableViewCell {
     
+    // Outlets
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
