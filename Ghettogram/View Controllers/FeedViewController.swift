@@ -15,7 +15,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // Properties
     var posts = [PFObject]()
-    var profile = [PFObject]()
     var selectedPost: PFObject!
     var numberOfPost: Int!
     var refreshControl: UIRefreshControl!
@@ -65,22 +64,13 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         query.limit = numberOfPost
         query.order(byDescending: "createdAt")
         
-        let profileQuery = PFQuery(className: "User")
-        profileQuery.includeKey("image")
-        
-        profileQuery.findObjectsInBackground { (profile, error) in
-            if profile != nil {
-                self.profile = profile!
-            }
-        }
-        
         query.findObjectsInBackground { (posts, error) in
             if posts != nil {
                 self.posts = posts!
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
             } else {
-                print("Error: \(error)")
+                print("Error: \(String(describing: error))")
             }
         }
         
@@ -108,7 +98,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if success {
                 print("SUCCESS: Successfully commented on a photo!")
             } else {
-                print("ERROR: Failed to comment on a photo!")
+                print("Error: \(String(describing: error))")
             }
         }
         
@@ -171,12 +161,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let post = posts[indexPath.section]
         let comments = (post["comments"] as? [PFObject]) ?? []
-        let profiles = profile[0]
+        let profileImage = PFUser.current()!["image"] as? PFFileObject
         
-        let profileImageFile = profiles["image"] as! PFFileObject
-        let profileUrlString = profileImageFile.url!
-        let profileUrl = URL(string: profileUrlString)!
-
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
             let user = post["author"] as! PFUser
@@ -190,11 +176,14 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             cell.postImageView.af_setImage(withURL: url)
             
-            if profiles["image"] != nil {
-                cell.userImageView.af_setImage(withURL: profileUrl)
-            } else {
-                print("ERROR: Failed to fetch user profile image. Display stock image.")
-            }
+            profileImage?.getDataInBackground(block: { (success, error) in
+                if success != nil, error == nil {
+                    let image = UIImage(data: success!)
+                    cell.userImageView.image = image
+                } else {
+                    print("Error: \(String(describing: error))")
+                }
+            })
             
             return cell
         } else if indexPath.row <= comments.count {
@@ -205,7 +194,15 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             let user = comment["author"] as! PFUser
             cell.userLabel.text = user.username
-            cell.profileImageView.af_setImage(withURL: profileUrl)
+            
+            profileImage?.getDataInBackground(block: { (success, error) in
+                if success != nil, error == nil {
+                    let image = UIImage(data: success!)
+                    cell.userImageView.image = image
+                } else {
+                    print("Error: \(String(describing: error))")
+                }
+            })
             
             return cell
         } else {

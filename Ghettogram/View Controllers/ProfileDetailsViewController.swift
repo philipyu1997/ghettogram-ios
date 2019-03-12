@@ -22,11 +22,11 @@ class ProfileDetailsViewController: UIViewController, UIImagePickerControllerDel
         
     } // end viewDidLoad function
     
-    @IBAction func dismissButton(_ sender: Any) {
+    @IBAction func onDismissButton(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)
         
-    } // end dismissButton function
+    } // end onDismissButton function
     
     @IBAction func onSubmitButton(_ sender: Any) {
         
@@ -42,7 +42,7 @@ class ProfileDetailsViewController: UIViewController, UIImagePickerControllerDel
                 print("SUCCESS: Successfully updated your profile image!")
                 self.dismiss(animated: true, completion: nil)
             } else {
-                print("ERROR: Failed to update profile image!")
+                print("Error: \(String(describing: error))")
             }
         }
         
