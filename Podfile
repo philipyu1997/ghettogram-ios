@@ -8,6 +8,7 @@ target 'Ghettogram' do
   # Pods for Ghettogram
   pod "Parse"
   pod "AlamofireImage"
+  pod "MessageInputBar"
 
   target 'GhettogramTests' do
     inherit! :search_paths

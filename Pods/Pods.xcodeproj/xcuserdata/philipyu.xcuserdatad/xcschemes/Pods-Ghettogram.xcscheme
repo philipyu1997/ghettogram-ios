@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0C0FB7C67E6EBCE4C9EB994CFF0574EB"
+               BlueprintIdentifier = "A3488DD1FDA61B8F9F5136C597E1BB5D"
                BuildableName = "Pods_Ghettogram.framework"
                BlueprintName = "Pods-Ghettogram"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0C0FB7C67E6EBCE4C9EB994CFF0574EB"
+            BlueprintIdentifier = "A3488DD1FDA61B8F9F5136C597E1BB5D"
             BuildableName = "Pods_Ghettogram.framework"
             BlueprintName = "Pods-Ghettogram"
             ReferencedContainer = "container:Pods.xcodeproj">
