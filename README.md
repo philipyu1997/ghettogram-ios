@@ -1,48 +1,48 @@
 # Ghettogram
 
-**Ghettogram** is an Instagram clone with a custom Parse backend that allows a user to post photos and view a global photos feed.
+## Table of Contents
+1. [Overview](#Overview)
+2. [Product Specs](#Product-Specs)
+3. [App Walkthrough](#App-Walkthrough)
+4. [Open-Source libraries used](#Open-Source-libraries-used)
+5. [Credits](#Credits)
 
-## Parstagram - Part II
+## Overview
+### Description
 
+Ghettogram is an Instagram-like client with a custom backend server that allows users to post photos and view their feed.
+
+## Product Specs
 ### User Stories
 
-The following **required** functionality is completed:
+- [x] User sees app icon in home screen and styled launch screen.
+- [x] User can sign up to create a new account.
+- [x] User can log in.
+- [x] User can take a photo, add a caption, and post it to the server.
+- [x] User can view the last 20 posts.
+- [x] User can pull to refresh.
+- [x] User can load past posts infinitely.
+- [x] User stays logged in across restarts.
+- [x] User can log out.
+- [x] User can view comments on a post.
+- [x] User can add a new comment.
+- [x] User can add a profile picture.
+- [x] Profile pictures are shown for posts and comments.
 
-- [x] User stays logged in across restarts. (1pt)
-- [x] User can log out. (1pt)
-- [x] User can view comments on a post. (3pts)
-- [x] User can add a new comment. (5pts)
+## App Walkthrough
 
-The following **bonus** features are implemented:
+Here's a GIF of how the app works:
 
-- [x] User can add a profile picture. (2pts)
-- [x] Profile pictures are shown for posts and comments. (2pts)
+<img src="https://user-images.githubusercontent.com/35745973/82190741-59fd7f80-98a6-11ea-9f63-8d2f5195333e.gif" width=250><br>
 
-#### Video Walkthrough
+## Open-source libraries used
 
-Here's a walkthrough of implemented user stories:
+- [Alamofire](https://github.com/Alamofire/Alamofire) - An HTTP networking library written in Swift.
+- [AlamofireImage](https://github.com/Alamofire/AlamofireImage) - An image component library for Alamofire.
+- [Bolts](https://github.com/BoltsFramework/Bolts-Swift) - A collection of low-level libraries designed to make developing mobile apps easier.
+- [MessageInputBar](https://github.com/MessageKit/MessageInputBar) - A powerful InputAccessoryView ideal for messaging applications
+- [Parse](https://github.com/parse-community/Parse-SDK-iOS-OSX) - An open source Backend-as-a-Service (BaaS) framework initially developed by Facebook. The platform now has an active and robust community of fanatical developers who constantly innovate and strive to improve the already impressive and modular platform.
 
-<img src='https://imgur.com/SI05R5s.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+## Credits
 
-## Parstagram - Part I
-
-### User Stories
-
-The following **required** functionality is completed:
-
-- [x] User sees app icon in home screen and styled launch screen. (1pt)
-- [x] User can sign up to create a new account. (1pt)
-- [x] User can log in. (1pt)
-- [x] User can take a photo, add a caption, and post it to the server. (3pt)
-- [x] User can view the last 20 posts. (4pts)
-
-The following **bonus** features are implemented:
-
-- [x] User can pull to refresh. (1pt)
-- [x] User can load past tweets infinitely. (2pts)
-
-#### Video Walkthrough
-
-Here's a walkthrough of implemented user stories:
-
-<img src='https://media.giphy.com/media/9JjRSPEaDHMgAfwauE/giphy.gif' width='' alt='Video Walkthrough' />
+>This is a companion project to CodePath's Professional iOS Course, check out the full course at [www.codepath.org](https://codepath.org/)
