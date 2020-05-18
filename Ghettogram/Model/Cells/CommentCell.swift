@@ -10,7 +10,7 @@ import UIKit
 
 class CommentCell: UITableViewCell {
     
-    // Outlets
+    // MARK: - Outlets
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
@@ -18,16 +18,15 @@ class CommentCell: UITableViewCell {
     override func awakeFromNib() {
         
         super.awakeFromNib()
-        // Initialization code
         
-    } // end awakeFromNib function
+        userImageView.makeRounded(withRadius: 16)
+        
+    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         
         super.setSelected(selected, animated: animated)
         
-        // Configure the view for the selected state
-        
-    } // end setSelected function
+    }
     
-} // end CommentCell class
+}

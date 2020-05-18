@@ -5,8 +5,8 @@ target 'Ghettogram' do
   use_frameworks!
 
   # Pods for Ghettogram
-  pod "Parse"
   pod "AlamofireImage"
   pod "MessageInputBar"
+  pod "Parse"
 
 end

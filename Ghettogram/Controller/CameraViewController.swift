@@ -10,19 +10,22 @@ import UIKit
 import AlamofireImage
 import Parse
 
-class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CameraViewController: UIViewController, UINavigationControllerDelegate {
     
-    // Outlets
+    // MARK: - Outlets
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var commentField: UITextField!
+    @IBOutlet weak var submitButton: UIButton!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        submitButton.makeRounded(withRadius: 8)
         
-    } // end viewDidLoad function
+    }
+    
+    // MARK: - IBAction Section
     
     @IBAction func onSubmitButton(_ sender: Any) {
         
@@ -45,7 +48,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             }
         }
         
-    } // end onSubmitButton function
+    }
     
     @IBAction func onCameraButton(_ sender: Any) {
         
@@ -61,28 +64,29 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         present(picker, animated: true, completion: nil)
         
-    } // end onCameraButton function
+    }
+    
+    @IBAction func dismissPressed(_ sender: UIButton) {
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+}
+
+extension CameraViewController: UIImagePickerControllerDelegate {
+    
+    // MARK: - UIImagePickerControllerDelegate Section
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         
         let image = info[.editedImage] as! UIImage
         let size = CGSize(width: 300, height: 300)
-        let scaledImage = image.af_imageAspectScaled(toFill: size)
+        let scaledImage = image.af.imageAspectScaled(toFill: size)
         
         photoImageView.image = scaledImage
-        
         dismiss(animated: true, completion: nil)
         
-    } // end imagePickerController function
+    }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-} // end CameraViewController class
+}

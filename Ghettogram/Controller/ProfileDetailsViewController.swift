@@ -9,24 +9,27 @@
 import UIKit
 import Parse
 
-class ProfileDetailsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfileDetailsViewController: UIViewController, UINavigationControllerDelegate {
     
-    // Outlets
+    // MARK: - Outlets
     @IBOutlet weak var profileViewImage: UIImageView!
+    @IBOutlet weak var submitButton: UIButton!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        submitButton.makeRounded(withRadius: 8)
         
-    } // end viewDidLoad function
+    }
+    
+    // MARK: - IBAction Section
     
     @IBAction func onDismissButton(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)
         
-    } // end onDismissButton function
+    }
     
     @IBAction func onSubmitButton(_ sender: Any) {
         
@@ -46,11 +49,12 @@ class ProfileDetailsViewController: UIViewController, UIImagePickerControllerDel
             }
         }
         
-    } // end onSubmitButton function
+    }
     
     @IBAction func onCameraButton(_ sender: Any) {
         
         let picker = UIImagePickerController()
+        
         picker.delegate = self
         picker.allowsEditing = true
         
@@ -62,28 +66,24 @@ class ProfileDetailsViewController: UIViewController, UIImagePickerControllerDel
         
         present(picker, animated: true, completion: nil)
         
-    } // end onCameraButton function
+    }
+    
+}
+
+extension ProfileDetailsViewController: UIImagePickerControllerDelegate {
+    
+    // MARK: - UIImagePickerControllerDelegate Section
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         
         let image = info[.editedImage] as! UIImage
         let size = CGSize(width: 300, height: 300)
-        let scaledImage = image.af_imageAspectScaled(toFill: size)
+        let scaledImage = image.af.imageAspectScaled(toFill: size)
         
         profileViewImage.image = scaledImage
         
         dismiss(animated: true, completion: nil)
         
-    } // end imagePickerController function
+    }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-} // end ProfileDetailsViewController class
+}

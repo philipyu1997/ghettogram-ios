@@ -11,20 +11,38 @@ import Parse
 
 class LoginViewController: UIViewController {
     
-    // Outlets
+    // MARK: - Outlets
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        // Setup outlet properties
         passwordField.isSecureTextEntry = true
+        loginButton.makeRounded(withRadius: 8)
+        registerButton.makeRounded(withRadius: 8)
         
-    } // end viewDidLoad function
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tapGesture)
+        
+    }
     
-    @IBAction func onSignIn(_ sender: Any) {
+    // MARK: - Private Functions
+    
+    @objc private func dismissKeyboard() {
+        
+        usernameField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        
+    }
+    
+    // MARK: - IBAction Section
+    
+    @IBAction func onLogIn(_ sender: Any) {
         
         let username = usernameField.text!
         let password = passwordField.text!
@@ -33,13 +51,13 @@ class LoginViewController: UIViewController {
             if user != nil {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
-                print("Error: \(error?.localizedDescription)")
+                print("Error: \(String(describing: error!.localizedDescription))")
             }
         }
         
-    } // end onSignIn function
+    }
     
-    @IBAction func onSignUp(_ sender: Any) {
+    @IBAction func onRegister(_ sender: Any) {
         
         let user = PFUser()
         user.username = usernameField.text
@@ -49,20 +67,10 @@ class LoginViewController: UIViewController {
             if success {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
-                print("Error: \(String(describing: error?.localizedDescription))")
+                print("Error: \(String(describing: error!.localizedDescription))")
             }
         }
         
-    } // end onSignUp function
+    }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-} // end LoginViewController class
+}
