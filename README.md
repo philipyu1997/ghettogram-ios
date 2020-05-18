@@ -15,19 +15,19 @@ Ghettogram is an Instagram-like client with a custom backend server that allows 
 ## Product Specs
 ### User Stories
 
-- [x] User sees app icon in home screen and styled launch screen.
-- [x] User can sign up to create a new account.
-- [x] User can log in.
-- [x] User can take a photo, add a caption, and post it to the server.
-- [x] User can view the last 20 posts.
-- [x] User can pull to refresh.
-- [x] User can load past posts infinitely.
-- [x] User stays logged in across restarts.
-- [x] User can log out.
-- [x] User can view comments on a post.
-- [x] User can add a new comment.
-- [x] User can add a profile picture.
-- [x] Profile pictures are shown for posts and comments.
+- [x] User shall be able to see an app icon in home screen and styled launch screen.
+- [x] User shall be able to sign up to create a new account.
+- [x] User shall be able to log in.
+- [x] User shall be able to take a photo, add a caption, and post it to the server.
+- [x] User shall be able to view the last 20 posts.
+- [x] User shall be able to pull to refresh.
+- [x] User shall be able to load past posts infinitely.
+- [x] User shall be able to stay logged in across restarts.
+- [x] User shall be able to log out.
+- [x] User shall be able to view comments on a post.
+- [x] User shall be able to add a new comment.
+- [x] User shall be able to add a profile picture.
+- [x] User shall be able to see their profile pictures are shown for posts and comments.
 
 ## App Walkthrough
 
