@@ -36,7 +36,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         post["image"] = file
         
-        post.saveInBackground { (success, error) in
+        post.saveInBackground { (success, _) in
             if success {
                 print("SUCCESS: Photo has been uploaded to your feed!")
                 self.dismiss(animated: true, completion: nil)
@@ -63,7 +63,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
     } // end onCameraButton function
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         
         let image = info[.editedImage] as! UIImage
         let size = CGSize(width: 300, height: 300)

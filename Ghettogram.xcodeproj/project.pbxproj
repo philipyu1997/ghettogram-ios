@@ -170,6 +170,7 @@
 				72DECFF32232099700AEE438 /* Frameworks */,
 				72DECFF42232099700AEE438 /* Resources */,
 				15C72E1E146FBC58AB898B84 /* [CP] Embed Pods Frameworks */,
+				72AEE0F424723727007DCB39 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -243,6 +244,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ghettogram/Pods-Ghettogram-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		72AEE0F424723727007DCB39 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		73C9BDBADBF22D1153A9F25C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
