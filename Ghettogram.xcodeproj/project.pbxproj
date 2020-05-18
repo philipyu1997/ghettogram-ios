@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -80,6 +80,45 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		72AEE0F02472363A007DCB39 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7217F2F022322F2C0092D501 /* Cells */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		72AEE0F124723644007DCB39 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72DED0002232099A00AEE438 /* Assets.xcassets */,
+				72DECFFD2232099700AEE438 /* Main.storyboard */,
+				72DED0022232099A00AEE438 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72AEE0F22472365B007DCB39 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				72DECFF92232099700AEE438 /* AppDelegate.swift */,
+				7217F2EA223214F00092D501 /* LoginViewController.swift */,
+				7217F2EC223214FB0092D501 /* FeedViewController.swift */,
+				7217F2EE223225F60092D501 /* CameraViewController.swift */,
+				7296D31922379D5100440ED9 /* ProfileViewController.swift */,
+				7296D31B22379DB100440ED9 /* ProfileDetailsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		72AEE0F32472367A007DCB39 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				72DED0052232099A00AEE438 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		72DECFED2232099700AEE438 = {
 			isa = PBXGroup;
 			children = (
@@ -101,35 +140,12 @@
 		72DECFF82232099700AEE438 /* Ghettogram */ = {
 			isa = PBXGroup;
 			children = (
-				7217F2F022322F2C0092D501 /* Cells */,
-				72F10E0E22320BB40023A176 /* Storyboards */,
-				72F10E0D22320BA50023A176 /* View Controllers */,
-				72DECFF92232099700AEE438 /* AppDelegate.swift */,
-				72DED0002232099A00AEE438 /* Assets.xcassets */,
-				72DED0052232099A00AEE438 /* Info.plist */,
+				72AEE0F22472365B007DCB39 /* Controller */,
+				72AEE0F02472363A007DCB39 /* Model */,
+				72AEE0F32472367A007DCB39 /* Supporting Files */,
+				72AEE0F124723644007DCB39 /* View */,
 			);
 			path = Ghettogram;
-			sourceTree = "<group>";
-		};
-		72F10E0D22320BA50023A176 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				7217F2EA223214F00092D501 /* LoginViewController.swift */,
-				7217F2EC223214FB0092D501 /* FeedViewController.swift */,
-				7217F2EE223225F60092D501 /* CameraViewController.swift */,
-				7296D31922379D5100440ED9 /* ProfileViewController.swift */,
-				7296D31B22379DB100440ED9 /* ProfileDetailsViewController.swift */,
-			);
-			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		72F10E0E22320BB40023A176 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				72DECFFD2232099700AEE438 /* Main.storyboard */,
-				72DED0022232099A00AEE438 /* LaunchScreen.storyboard */,
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		9B88FD7E78F2F3CF0B876B6B /* Frameworks */ = {
@@ -413,13 +429,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8E7FB8SA95;
-				INFOPLIST_FILE = Ghettogram/Info.plist;
+				INFOPLIST_FILE = "Ghettogram/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Philip-Yu.Ghettogram";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuphilip.Ghettogram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -433,13 +449,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8E7FB8SA95;
-				INFOPLIST_FILE = Ghettogram/Info.plist;
+				INFOPLIST_FILE = "Ghettogram/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Philip-Yu.Ghettogram";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuphilip.Ghettogram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
