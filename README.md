@@ -5,7 +5,8 @@
 2. [Product Specs](#Product-Specs)
 3. [App Walkthrough](#App-Walkthrough)
 4. [Open-Source libraries used](#Open-Source-libraries-used)
-5. [Credits](#Credits)
+5. [Backend](#Backend)
+6. [Credits](#Credits)
 
 ## Overview
 ### Description
@@ -39,8 +40,10 @@ Here's a GIF of how the app works:
 
 - [Alamofire](https://github.com/Alamofire/Alamofire) - An HTTP networking library written in Swift.
 - [AlamofireImage](https://github.com/Alamofire/AlamofireImage) - An image component library for Alamofire.
-- [Bolts](https://github.com/BoltsFramework/Bolts-Swift) - A collection of low-level libraries designed to make developing mobile apps easier.
 - [MessageInputBar](https://github.com/MessageKit/MessageInputBar) - A powerful InputAccessoryView ideal for messaging applications
+
+## Backend
+
 - [Parse](https://github.com/parse-community/Parse-SDK-iOS-OSX) - An open source Backend-as-a-Service (BaaS) framework initially developed by Facebook. The platform now has an active and robust community of fanatical developers who constantly innovate and strive to improve the already impressive and modular platform.
 
 ## Credits
