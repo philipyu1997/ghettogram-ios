@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
         
     }
     
-    // MARK: - Private Functions
+    // MARK: - Private Function Section
     
     @objc private func dismissKeyboard() {
         

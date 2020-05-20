@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7214502724723F42008FE891 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214502624723F42008FE891 /* Constant.swift */; };
-		7214502924724B9F008FE891 /* Parse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7214502824724B9F008FE891 /* Parse.plist */; };
 		7217F2EB223214F00092D501 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F2EA223214F00092D501 /* LoginViewController.swift */; };
 		7217F2ED223214FB0092D501 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F2EC223214FB0092D501 /* FeedViewController.swift */; };
 		7217F2EF223225F60092D501 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F2EE223225F60092D501 /* CameraViewController.swift */; };
 		7217F2F222322F420092D501 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F2F122322F420092D501 /* PostCell.swift */; };
+		722AEDEB247518E10072BDBB /* Parse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 722AEDEA247518E10072BDBB /* Parse.plist */; };
 		7296D31A22379D5100440ED9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7296D31922379D5100440ED9 /* ProfileViewController.swift */; };
 		7296D31C22379DB100440ED9 /* ProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7296D31B22379DB100440ED9 /* ProfileDetailsViewController.swift */; };
 		72AEE0F72472380F007DCB39 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72AEE0F62472380F007DCB39 /* Pacifico-Regular.ttf */; };
@@ -30,11 +30,11 @@
 		35239D1A066AB87ED790D11F /* Pods-GhettogramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhettogramTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GhettogramTests/Pods-GhettogramTests.release.xcconfig"; sourceTree = "<group>"; };
 		4A83B39E8CA552CDB1AB7A46 /* Pods-GhettogramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhettogramUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GhettogramUITests/Pods-GhettogramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7214502624723F42008FE891 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		7214502824724B9F008FE891 /* Parse.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Parse.plist; sourceTree = "<group>"; };
 		7217F2EA223214F00092D501 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7217F2EC223214FB0092D501 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		7217F2EE223225F60092D501 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		7217F2F122322F420092D501 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		722AEDEA247518E10072BDBB /* Parse.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Parse.plist; sourceTree = "<group>"; };
 		7296D31922379D5100440ED9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7296D31B22379DB100440ED9 /* ProfileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsViewController.swift; sourceTree = "<group>"; };
 		72AEE0F62472380F007DCB39 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				72DED0052232099A00AEE438 /* Info.plist */,
-				7214502824724B9F008FE891 /* Parse.plist */,
+				722AEDEA247518E10072BDBB /* Parse.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -237,7 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72DED0042232099A00AEE438 /* LaunchScreen.storyboard in Resources */,
-				7214502924724B9F008FE891 /* Parse.plist in Resources */,
+				722AEDEB247518E10072BDBB /* Parse.plist in Resources */,
 				72AEE0F72472380F007DCB39 /* Pacifico-Regular.ttf in Resources */,
 				72DED0012232099A00AEE438 /* Assets.xcassets in Resources */,
 				72DECFFF2232099700AEE438 /* Main.storyboard in Resources */,

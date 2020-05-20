@@ -17,13 +17,26 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
-    var posts = [PFObject]()
-    var selectedPost: PFObject!
-    var numberOfPost: Int!
-    var refreshControl: UIRefreshControl!
-    var showsCommentBar = false
-    let feedLimit = 20
-    let commentBar = MessageInputBar()
+    private var posts = [PFObject]()
+    private var selectedPost: PFObject!
+    private var numberOfPost: Int!
+    private var refreshControl: UIRefreshControl!
+    private var showsCommentBar = false
+    
+    private let feedLimit = 20
+    private let commentBar = MessageInputBar()
+    
+    override var inputAccessoryView: UIView? {
+        
+        return commentBar
+        
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        
+        return showsCommentBar
+        
+    }
     
     override func viewDidLoad() {
         
@@ -58,7 +71,21 @@ class FeedViewController: UIViewController {
         
     }
     
-    // MARK: - Private Functions
+    // MARK: - IBAction Section
+    
+    @IBAction func onLogoutButton(_ sender: Any) {
+        
+        PFUser.logOut()
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        
+        delegate.window?.rootViewController = loginViewController
+        
+    }
+    
+    // MARK: - Private Function Section
     
     // Load first posts
     @objc private func loadPost() {
@@ -112,32 +139,6 @@ class FeedViewController: UIViewController {
         showsCommentBar = false
         
         becomeFirstResponder()
-        
-    }
-    
-    override var inputAccessoryView: UIView? {
-        
-        return commentBar
-        
-    }
-    
-    override var canBecomeFirstResponder: Bool {
-        
-        return showsCommentBar
-        
-    }
-    
-    // MARK: - IBAction Section
-    
-    @IBAction func onLogoutButton(_ sender: Any) {
-        
-        PFUser.logOut()
-        
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        
-        delegate.window?.rootViewController = loginViewController
         
     }
     
