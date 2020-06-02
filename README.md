@@ -4,7 +4,7 @@
 1. [Overview](#Overview)
 2. [Product Specs](#Product-Specs)
 3. [App Walkthrough](#App-Walkthrough)
-4. [Open-Source libraries used](#Open-Source-libraries-used)
+4. [Libraries](#Libraries)
 5. [Backend](#Backend)
 6. [Credits](#Credits)
 
@@ -34,13 +34,13 @@ Ghettogram is an Instagram-like client with a custom backend server that allows 
 
 Here's a GIF of how the app works:
 
-<img src="https://user-images.githubusercontent.com/35745973/82190741-59fd7f80-98a6-11ea-9f63-8d2f5195333e.gif" width=250><br>
+<img src="https://user-images.githubusercontent.com/35745973/82190741-59fd7f80-98a6-11ea-9f63-8d2f5195333e.gif" width=250>
 
-## Open-source libraries used
+## Libraries
 
 - [Alamofire](https://github.com/Alamofire/Alamofire) - An HTTP networking library written in Swift.
 - [AlamofireImage](https://github.com/Alamofire/AlamofireImage) - An image component library for Alamofire.
-- [MessageInputBar](https://github.com/MessageKit/MessageInputBar) - A powerful InputAccessoryView ideal for messaging applications
+- [MessageInputBar](https://github.com/MessageKit/MessageInputBar) - A powerful InputAccessoryView ideal for messaging applications.
 
 ## Backend
 
@@ -48,4 +48,4 @@ Here's a GIF of how the app works:
 
 ## Credits
 
->This is a companion project to CodePath's Professional iOS Course, check out the full course at [www.codepath.org](https://codepath.org/)
+>This is a companion project to CodePath's Professional iOS Course, check out the full course at [www.codepath.org](https://codepath.org/).
